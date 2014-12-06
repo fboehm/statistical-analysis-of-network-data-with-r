@@ -1,0 +1,27 @@
+---
+title: "sand R package"
+author: "Fred Boehm"
+date: "December 5, 2014"
+output: html_document
+---
+
+```{r, eval=FALSE}
+install.packages("sand")
+```
+
+```{r}
+library(sand)
+library(igraph)
+g <- graph.formula(1-2, 1-3, 2-3, 2-4, 3-5, 4-5, 4-6, 4-7, 5-6, 6-7)
+plot(g)
+V(g)
+E(g)
+str(g)
+```
+
+Now, make a directed graph:
+
+```{r}
+dg <- graph.formula(1-+2, 1-+3, 2++3)
+plot(dg)
+```
