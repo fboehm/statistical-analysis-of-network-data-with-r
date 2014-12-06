@@ -25,3 +25,27 @@ Now, make a directed graph:
 dg <- graph.formula(1-+2, 1-+3, 2++3)
 plot(dg)
 ```
+
+```{r}
+dg <- graph.formula(Sam-+Mary, Sam-+Tom, Mary++Tom)
+str(dg)
+```
+
+```{r}
+V(dg)$name <- c("Sam", "Mary", "Tom")
+E(dg)
+```
+
+Here is the function to work with adjacency matrix from a IGRAPH
+
+```{r}
+get.adjacency(g)
+```
+
+Compare it with that for a directed graph, which shouldn't be symmetric:
+
+```{r}
+get.adjacency(dg)
+```
+
+
